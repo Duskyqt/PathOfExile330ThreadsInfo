@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What Threads Actually Do to Your Maps · Path of Exile 3.30</title>
+<meta name="description" content="Path of Exile 3.30 Threads, measured from game memory: the damage, tankiness and rarity each Thread count adds, and the hidden juice mods they roll.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f0d0b;
+    --bg-2: #17140f;
+    --panel: #1c1813;
+    --line: #3a3126;
+    --line-soft: #2a241c;
+    --text: #e6dfd3;
+    --muted: #a39886;
+    --gold: #c8a464;
+    --gold-bright: #e8c784;
+    --link: #d9b46f;
+    --code-bg: #241f18;
+    --quote: #1f1a14;
+    --toc-w: 250px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 500px at 50% -200px, rgba(200,164,100,.12), transparent 70%),
+      var(--bg);
+    color: var(--text);
+    font: 16px/1.7 Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--link); text-decoration-color: rgba(217,180,111,.4); text-underline-offset: 3px; }
+  a:hover { color: var(--gold-bright); text-decoration-color: currentColor; }
+
+  /* Top bar */
+  .topbar {
+    position: sticky; top: 0; z-index: 10;
+    display: flex; align-items: center; gap: 16px;
+    padding: 10px 24px;
+    background: rgba(15,13,11,.85);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line-soft);
+    font-size: 14px;
+  }
+  .topbar .brand { font-family: Cinzel, serif; font-weight: 700; color: var(--gold); letter-spacing: .04em; text-decoration: none; }
+  .topbar nav { margin-left: auto; display: flex; gap: 18px; }
+  .topbar nav a { color: var(--muted); text-decoration: none; }
+  .topbar nav a:hover, .topbar nav a.active { color: var(--gold-bright); }
+
+  /* Layout */
+  .layout {
+    display: grid;
+    grid-template-columns: var(--toc-w) minmax(0, 820px);
+    gap: 48px;
+    justify-content: center;
+    padding: 40px 24px 96px;
+  }
+  .toc {
+    position: sticky; top: 72px; align-self: start;
+    max-height: calc(100vh - 96px); overflow: auto;
+    font-size: 13.5px; line-height: 1.45;
+    padding-right: 8px;
+  }
+  .toc h2 { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; font-weight: 600; }
+  .toc ul { list-style: none; margin: 0; padding: 0; }
+  .toc li { margin: 0; }
+  .toc a { display: block; padding: 5px 10px; color: var(--muted); text-decoration: none; border-left: 2px solid var(--line-soft); }
+  .toc a.sub { padding-left: 22px; font-size: 12.5px; }
+  .toc a:hover { color: var(--text); }
+  .toc a.active { color: var(--gold-bright); border-left-color: var(--gold); }
+
+  /* Article */
+  article { min-width: 0; }
+  article h1 {
+    font-family: Cinzel, serif; font-weight: 700;
+    font-size: clamp(30px, 4.5vw, 46px); line-height: 1.15;
+    margin: 0 0 8px; color: var(--gold-bright);
+    letter-spacing: .01em;
+  }
+  article h1 + p em, article h1 + p { color: var(--muted); }
+  article h2 {
+    font-family: Cinzel, serif; font-weight: 700; color: var(--gold);
+    font-size: 26px; line-height: 1.3;
+    margin: 56px 0 16px; padding-top: 8px;
+  }
+  article h3 { font-size: 19px; margin: 36px 0 12px; color: var(--text); font-weight: 600; }
+  article h4 { font-size: 16px; margin: 28px 0 10px; }
+  article h2 .anchor, article h3 .anchor { opacity: 0; margin-left: 8px; color: var(--muted); text-decoration: none; font-family: Inter, sans-serif; font-size: .7em; }
+  article h2:hover .anchor, article h3:hover .anchor { opacity: 1; }
+  article p, article ul, article ol { margin: 0 0 16px; }
+  article li { margin: 6px 0; }
+  article li::marker { color: var(--gold); }
+  article strong { color: #fff4e0; font-weight: 600; }
+  article hr { border: 0; height: 1px; margin: 48px 0; background: linear-gradient(90deg, transparent, var(--line), transparent); }
+  article blockquote {
+    margin: 20px 0; padding: 14px 18px;
+    background: var(--quote);
+    border: 1px solid var(--line-soft); border-left: 3px solid var(--gold);
+    border-radius: 6px; color: #d8cfc0;
+  }
+  article blockquote p:last-child { margin-bottom: 0; }
+  article code {
+    font-family: "JetBrains Mono", ui-monospace, monospace; font-size: .86em;
+    background: var(--code-bg); border: 1px solid var(--line-soft);
+    padding: 1px 6px; border-radius: 4px; color: #f0d9a8;
+  }
+  article pre { background: var(--code-bg); border: 1px solid var(--line-soft); border-radius: 8px; padding: 14px 16px; overflow: auto; }
+  article pre code { border: 0; padding: 0; background: none; }
+
+  /* Tables */
+  .table-wrap { overflow-x: auto; margin: 20px 0 24px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); }
+  article table { border-collapse: collapse; width: 100%; font-size: 14.5px; font-variant-numeric: tabular-nums; }
+  article th, article td { padding: 9px 14px; border-bottom: 1px solid var(--line-soft); white-space: nowrap; }
+  article td { white-space: normal; }
+  article th { background: #241e17; color: var(--gold); font-weight: 600; font-size: 13px; letter-spacing: .02em; }
+  article th:not([align]) { text-align: left; }
+  article tr:last-child td { border-bottom: 0; }
+  article tbody tr:hover td { background: rgba(200,164,100,.05); }
+  article td strong { color: var(--gold-bright); }
+
+  /* Doc banner for findings pages */
+  .doc-banner { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 28px; font-size: 14px; color: var(--muted); }
+  .doc-banner a { text-decoration: none; }
+  .pill { display: inline-block; padding: 2px 10px; border: 1px solid var(--line); border-radius: 999px; font-size: 12px; color: var(--muted); }
+
+  .status { color: var(--muted); padding: 40px 0; }
+  footer { border-top: 1px solid var(--line-soft); padding: 24px; text-align: center; color: var(--muted); font-size: 13px; }
+
+  @media (max-width: 1000px) {
+    .layout { grid-template-columns: minmax(0, 1fr); padding-top: 24px; }
+    .toc { display: none; }
+    .topbar nav a.hide-sm { display: none; }
+  }
+</style>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="./">PoE 3.30 Threads</a>
+  <nav>
+    <a href="./" id="nav-home">Write-up</a>
+    <a href="?doc=findings/README.md" id="nav-notes">Research notes</a>
+    <a class="hide-sm" href="https://github.com/Duskyqt/PathOfExile330ThreadsInfo">GitHub</a>
+  </nav>
+</header>
+
+<div class="layout">
+  <aside class="toc" id="toc" aria-label="On this page"></aside>
+  <article id="content"><p class="status">Loading…</p></article>
+</div>
+
+<footer>
+  Measured from game memory in Path of Exile 3.30 · Not affiliated with Grinding Gear Games ·
+  <a href="https://github.com/Duskyqt/PathOfExile330ThreadsInfo">Source &amp; raw data on GitHub</a>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+<script>
+(function () {
+  const REPO = "https://github.com/Duskyqt/PathOfExile330ThreadsInfo";
+  const BRANCH = "master";
+  const params = new URLSearchParams(location.search);
+  let doc = (params.get("doc") || "README.md").replace(/^\/+/, "");
+  // Only allow markdown files inside this repo.
+  if (!/^[\w\-./]+\.md$/.test(doc) || doc.includes("..")) doc = "README.md";
+  const isHome = doc === "README.md";
+  document.getElementById(isHome ? "nav-home" : "nav-notes").classList.add("active");
+
+  const content = document.getElementById("content");
+  const tocEl = document.getElementById("toc");
+
+  function dirOf(p) { const i = p.lastIndexOf("/"); return i < 0 ? "" : p.slice(0, i + 1); }
+  function normalize(path) {
+    const out = [];
+    for (const part of path.split("/")) {
+      if (part === "" || part === ".") continue;
+      if (part === "..") out.pop(); else out.push(part);
+    }
+    return out.join("/");
+  }
+  function slugify(text) {
+    return text.toLowerCase().trim()
+      .replace(/[^\p{L}\p{N}\s-]/gu, "")
+      .replace(/\s/g, "-");
+  }
+
+  // Rewrite repo-relative links: .md -> rendered here, other files -> GitHub.
+  function rewriteLinks(root) {
+    root.querySelectorAll("a[href]").forEach(a => {
+      const href = a.getAttribute("href");
+      if (/^(https?:|mailto:|#)/.test(href)) {
+        if (/^https?:/.test(href)) { a.target = "_blank"; a.rel = "noopener"; }
+        return;
+      }
+      const [pathPart, hash] = href.split("#");
+      let target = normalize(dirOf(doc) + pathPart);
+      if (pathPart.endsWith("/") || target === "findings") target = normalize(target + "/README.md");
+      const h = hash ? "#" + hash : "";
+      if (target.endsWith(".md")) {
+        a.href = (target === "README.md" ? "./" : "?doc=" + target) + h;
+      } else {
+        a.href = `${REPO}/blob/${BRANCH}/${target}${h}`;
+        a.target = "_blank"; a.rel = "noopener";
+      }
+    });
+  }
+
+  function buildToc(root) {
+    const heads = [...root.querySelectorAll("h2, h3")];
+    const used = {};
+    root.querySelectorAll("h1, h2, h3, h4").forEach(h => {
+      let id = slugify(h.textContent);
+      if (used[id] !== undefined) id = id + "-" + (++used[id]); else used[id] = 0;
+      h.id = id;
+      h.dataset.title = h.textContent.trim();
+      if (h.tagName === "H2" || h.tagName === "H3") {
+        const a = document.createElement("a");
+        a.className = "anchor"; a.href = "#" + id; a.textContent = "#";
+        a.setAttribute("aria-label", "Link to this section");
+        h.appendChild(a);
+      }
+    });
+    if (!heads.length) { tocEl.remove(); return; }
+    const ul = document.createElement("ul");
+    heads.forEach(h => {
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      a.href = "#" + h.id;
+      a.textContent = h.dataset.title;
+      a.dataset.target = h.id;
+      if (h.tagName === "H3") a.className = "sub";
+      li.appendChild(a); ul.appendChild(li);
+    });
+    tocEl.innerHTML = "<h2>On this page</h2>";
+    tocEl.appendChild(ul);
+
+    const links = new Map([...tocEl.querySelectorAll("a")].map(a => [a.dataset.target, a]));
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          links.forEach(l => l.classList.remove("active"));
+          const l = links.get(e.target.id);
+          if (l) { l.classList.add("active"); l.scrollIntoView({ block: "nearest" }); }
+        }
+      });
+    }, { rootMargin: "0px 0px -75% 0px" });
+    heads.forEach(h => obs.observe(h));
+  }
+
+  fetch(doc, { cache: "no-cache" })
+    .then(r => { if (!r.ok) throw new Error(r.status + " " + r.statusText); return r.text(); })
+    .then(md => {
+      content.innerHTML = marked.parse(md, { gfm: true });
+      content.querySelectorAll("table").forEach(t => {
+        const w = document.createElement("div"); w.className = "table-wrap";
+        t.parentNode.insertBefore(w, t); w.appendChild(t);
+      });
+      if (!isHome) {
+        const banner = document.createElement("div");
+        banner.className = "doc-banner";
+        banner.innerHTML = `<a href="./">← Back to the write-up</a>
+          <span class="pill">${doc}</span>
+          <a href="${REPO}/blob/${BRANCH}/${doc}" target="_blank" rel="noopener">View on GitHub</a>`;
+        content.prepend(banner);
+      }
+      rewriteLinks(content);
+      buildToc(content);
+      const h1 = content.querySelector("h1");
+      if (h1 && !isHome) document.title = h1.dataset.title + " · PoE 3.30 Threads";
+      if (location.hash) {
+        const el = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+        if (el) el.scrollIntoView();
+      }
+    })
+    .catch(err => {
+      content.innerHTML = `<p class="status">Couldn't load <code>${doc}</code> (${err.message}).
+        <a href="${REPO}/blob/${BRANCH}/${doc}">Read it on GitHub instead.</a></p>`;
+      tocEl.remove();
+    });
+})();
+</script>
+</body>
+</html>
