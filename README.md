@@ -188,6 +188,11 @@ map. At 6 it averaged 2.6, and at 8 it rolled 3 or 4 every time.
 Keep in mind that the 8-Thread numbers rest on 4 to 5 maps per league mechanic (9 for
 Incursion). The direction is clear, the exact averages less so.
 
+> **Count isn't quality.** These tables only count juice mods. They say nothing about how
+> _good_ each mod is. A league mechanic that rolls fewer juice mods may still roll more
+> valuable ones, and one that rolls lots may be rolling mostly filler. This data isn't enough
+> to rank league mechanics by the quality of their juice.
+
 ### It's the Threads, not the map
 
 We changed the maps on purpose. If juice depended on the map rather than the Threads, mixing
