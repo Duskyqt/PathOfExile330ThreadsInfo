@@ -213,7 +213,9 @@ up map levels and affixes would show it.
 
 The juice followed the Threads every time. The tier-11 map rolled 10, exactly like its tier-16
 siblings. Maps with and without affixes rolled the same. The two special maps rolled 11 and 9.
-Map tier and affixes don't seem to move the juice. The Thread count does.
+Map tier and affixes don't seem to move how much juice you get. The Thread count does. A
+later hotfix does put area level floors on some specific mods, though (see "What _doesn't_
+matter" below).
 
 ### Two league mechanics or three?
 
@@ -331,6 +333,25 @@ What the map level _does_ change is a separate hidden monster life bonus (+55% a
 78, +98% at 82, +109% at 83). That's the map's own scaling, and it stacks on top of whatever the
 Threads add. Map affixes don't change it.
 
+**Map level does gate some juice mods, though.** A GGG hotfix restricted several of the more
+dangerous ones to higher area levels:
+
+| Juice mod | Minimum area level |
+| --------- | :----------------: |
+| Blight: a sleeping Pantheon god replaces the Blight Pump | 73 |
+| Ultimatum: Double Down on encounters | 73 |
+| Breach: rare Breach monsters get an additional Breach mod | 73 |
+| Abyss: Abyssal rares get an additional Abyssal Monster Modifier | 80 |
+| Bestiary: beasts empowered with wisps | 80 |
+| Betrayal: Catarina accompanies encounters | 80 |
+| Betrayal: syndicate members get Rare Monster modifiers | 80 |
+
+None of these can roll when only a single Thread is spent. Our maps were all area level 77 or
+higher, so the 73 floors don't touch our results, but under the hotfix the 77–78 maps in the
+6/6/6 run can't roll the level-80 mods. We don't know whether any other juice mods have
+minimum levels; our maps never went low enough to find out. That needs testing on low-level
+maps.
+
 **And juice doesn't need a juiced map.** Maps with no affixes, lower tiers and special maps
 all rolled juice just as well, with values in their normal ranges.
 
@@ -369,6 +390,8 @@ undercount.
 3. **Legion above 3.** We need more maps to pin down how its extra spawns roll.
 4. **Does solo 10 starve every league mechanic, or just Legion?** One 10-Abyss map rolled 5
    juice mods. A few more solo 10 maps on other league mechanics would tell.
+5. **Do other juice mods have a minimum area level?** GGG listed seven, but there may be
+   more. Low-level maps (under 73) would show which mods never roll there.
 
 Until then: **3/3/3 for the best rarity per point of tankiness, 6/6/6 or 8/8/8 for more juice
 if your build can take it, always fill all three slots, and skip solo 10.**
