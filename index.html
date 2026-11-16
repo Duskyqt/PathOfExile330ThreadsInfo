@@ -60,14 +60,13 @@
 
   .layout {
     display: grid;
-    grid-template-columns: minmax(0, 70ch) 230px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 70ch) minmax(230px, 1fr);
     gap: clamp(40px, 6vw, 96px);
     padding: 24px clamp(20px, 5vw, 64px) 120px;
-    max-width: 1280px;
   }
 
   /* Contents as a spool: one thread, a knot per section */
-  .toc { grid-column: 2; grid-row: 1; position: sticky; top: 90px; align-self: start; max-height: calc(100vh - 110px); overflow: auto; font-size: 14.5px; line-height: 1.4; }
+  .toc { grid-column: 3; grid-row: 1; width: 230px; max-width: 100%; position: sticky; top: 90px; align-self: start; max-height: calc(100vh - 110px); overflow: auto; font-size: 14.5px; line-height: 1.4; }
   .toc p { font-family: Unbounded, sans-serif; font-weight: 500; font-size: 13px; color: var(--linen-dim); margin: 0 0 14px; }
   .toc ul { list-style: none; margin: 0; padding: 0 0 0 18px; position: relative; }
   .toc ul::before { content: ""; position: absolute; left: 6px; top: 8px; bottom: 8px; width: 2px; background: var(--verdigris); opacity: .55; border-radius: 2px; }
@@ -80,7 +79,7 @@
   .toc li.active::before { background: var(--weld); border-color: var(--weld); }
   .toc li.active a { color: var(--linen); }
 
-  article { grid-column: 1; grid-row: 1; min-width: 0; }
+  article { grid-column: 2; grid-row: 1; min-width: 0; }
   article h1 {
     font-family: Unbounded, sans-serif; font-weight: 800;
     font-size: clamp(36px, 6.4vw, 76px); line-height: .98; letter-spacing: -.035em;
@@ -144,10 +143,11 @@
   .doc-banner code { font-size: 13px; background: var(--indigo-deep); padding: 3px 8px; border-radius: 3px; }
 
   .status { color: var(--linen-dim); padding: 40px 0; }
-  footer { border-top: 2px dashed var(--stitch); padding: 28px clamp(20px, 5vw, 64px); color: var(--linen-dim); font-size: 14.5px; max-width: 70ch; box-sizing: content-box; }
+  footer { border-top: 2px dashed var(--stitch); padding: 28px clamp(20px, 5vw, 64px); color: var(--linen-dim); font-size: 14.5px; max-width: 70ch; box-sizing: content-box; margin: 0 auto; }
 
   @media (max-width: 1000px) {
     .layout { grid-template-columns: minmax(0, 1fr); }
+    article { grid-column: 1; }
     .toc { display: none; }
     .topbar nav a.hide-sm { display: none; }
     body { font-size: 17px; }
