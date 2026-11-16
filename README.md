@@ -32,11 +32,14 @@ we're poor and throwing away at least 20c per map to do 8/8/8 runs).
 **So add Threads until the next one costs too much.** The early steps are cheap, the late ones
 are brutal. Here's what each extra Thread adds:
 
-| Going from | 2→3  | 3→4  | 4→5  | 5→6  |  6→7  |  7→8  |
-| ---------- | :--: | :--: | :--: | :--: | :---: | :---: |
-| Tankiness  | +15% | +30% | +50% | +90% | +170% | +320% |
-| Damage     | +5%  | +5%  | +5%  | +5%  |  +8%  | +12%  |
-| Rarity     | +10% | +13% | +14% | +18% | +23%  | +32%  |
+| Going from | 2→3  | 3→4  | 4→5  | 5→6  |  6→7  |  7→8  | 8→9\* | 9→10\* |
+| ---------- | :--: | :--: | :--: | :--: | :---: | :---: | :---: | :----: |
+| Tankiness  | +15% | +30% | +50% | +90% | +170% | +320% | +350% | +350%  |
+| Damage     | +5%  | +5%  | +5%  | +5%  |  +8%  | +12%  |  +5%  |  +5%   |
+| Rarity     | +10% | +13% | +14% | +18% | +23%  | +32%  | +20%  |  +15%  |
+
+\* _9 and 10 Threads need the atlas passive that lifts the cap, and only work with a single
+league mechanic slotted._
 
 Up to about 5 or 6, each step is small enough that the extra juice is worth a look. From 6
 on, a single extra Thread adds more tankiness than the first five put together. Where you stop
