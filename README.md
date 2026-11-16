@@ -352,14 +352,6 @@ undercount.
 
 ---
 
-## A side note on the "per Thread type" passive
-
-The 6/6/6 and 8/8/8 maps were run with a new atlas passive that adds 5% map modifier effect
-per different Thread type: +15% with three league mechanics, +10% with two, +5% with one. It doesn't seem to
-touch juice: research chest clusters still landed inside their normal single-roll range.
-
----
-
 ## What's still open
 
 1. **How much is a juice mod worth?** We can count them, but whether 10 juice mods at 8/8/8
