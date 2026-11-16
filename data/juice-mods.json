@@ -1,0 +1,1183 @@
+{
+  "source": "Data/Mods.dat, read from the PoE 3.30 client on 2026-11-15",
+  "notes": [
+    "All are Domain 5 (Area), GenerationType 3 (Unique), levels 1-100.",
+    "None has spawn weights, generation weights or tags: which ones a map rolls is decided server-side.",
+    "Mods sharing a family are mutually exclusive; see sharedFamilies.",
+    "On a map they appear only as stats. Detect them by stat signature: every stat present, with its value inside [min,max]."
+  ],
+  "countByLeague": {
+    "Abyss": 5,
+    "Bestiary": 7,
+    "Betrayal": 6,
+    "Blight": 8,
+    "Breach": 8,
+    "Expedition": 6,
+    "Incursion": 8,
+    "Legion": 8,
+    "Ritual": 5,
+    "Ultimatum": 9
+  },
+  "sharedFamilies": {
+    "RandomJuiceModBlightPumpReplace": [
+      "RandomJuiceModBlightMiniboss",
+      "RandomJuiceModBlightPantheon"
+    ],
+    "RandomJuiceModUltimatumSingleRewardType": [
+      "RandomJuiceModUltimatumInscribedOnly",
+      "RandomJuiceModUltimatumCatalystOnly"
+    ]
+  },
+  "mods": [
+    {
+      "id": "RandomJuiceModBlightPustules",
+      "league": "Blight",
+      "modType": "RandomJuiceModBlightPustules",
+      "families": [
+        "RandomJuiceModBlightPustules"
+      ],
+      "stats": [
+        {
+          "id": "map_blight_spawn_friendly_pustules",
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "mods_dat_row": 40622
+    },
+    {
+      "id": "RandomJuiceModBlightSupercharge",
+      "league": "Blight",
+      "modType": "RandomJuiceModBlightSupercharge",
+      "families": [
+        "RandomJuiceModBlightSupercharge"
+      ],
+      "stats": [
+        {
+          "id": "map_blight_up_to_x_supercharged_lanes",
+          "min": 2,
+          "max": 2
+        }
+      ],
+      "mods_dat_row": 40623
+    },
+    {
+      "id": "RandomJuiceModBlightMiniboss",
+      "league": "Blight",
+      "modType": "RandomJuiceModBlightMiniboss",
+      "families": [
+        "RandomJuiceModBlightPumpReplace"
+      ],
+      "stats": [
+        {
+          "id": "map_blight_core_spawn_miniboss",
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "mods_dat_row": 40624
+    },
+    {
+      "id": "RandomJuiceModBlightFreeTowers",
+      "league": "Blight",
+      "modType": "RandomJuiceModBlightFreeTowers",
+      "families": [
+        "RandomJuiceModBlightFreeTowers"
+      ],
+      "stats": [
+        {
+          "id": "map_blight_tower_cost_+%",
+          "min": -100,
+          "max": -100
+        }
+      ],
+      "mods_dat_row": 40625
+    },
+    {
+      "id": "RandomJuiceModBlightGigaLane",
+      "league": "Blight",
+      "modType": "RandomJuiceModBlightGigaLane",
+      "families": [
+        "RandomJuiceModBlightGigaLane"
+      ],
+      "stats": [
+        {
+          "id": "map_blight_replace_x_lanes_with_giga_lane",
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "mods_dat_row": 40626
+    },
+    {
+      "id": "RandomJuiceModBlightCurrencyLane",
+      "league": "Blight",
+      "modType": "RandomJuiceModBlightCurrencyLane",
+      "families": [
+        "RandomJuiceModBlightCurrencyLane"
+      ],
+      "stats": [
+        {
+          "id": "map_blight_replace_x_lanes_with_currency_lane",
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "mods_dat_row": 40627
+    },
+    {
+      "id": "RandomJuiceModBlightExileLane",
+      "league": "Blight",
+      "modType": "RandomJuiceModBlightExileLane",
+      "families": [
+        "RandomJuiceModBlightExileLane"
+      ],
+      "stats": [
+        {
+          "id": "map_blight_replace_x_lanes_with_exile_lane",
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "mods_dat_row": 40628
+    },
+    {
+      "id": "RandomJuiceModBlightPantheon",
+      "league": "Blight",
+      "modType": "RandomJuiceModBlightPantheon",
+      "families": [
+        "RandomJuiceModBlightPumpReplace"
+      ],
+      "stats": [
+        {
+          "id": "map_blight_core_replace_pantheon_god",
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "mods_dat_row": 40629
+    },
+    {
+      "id": "RandomJuiceModExpeditionScale",
+      "league": "Expedition",
+      "modType": "RandomJuiceModExpeditionScale",
+      "families": [
+        "RandomJuiceModExpeditionScale"
+      ],
+      "stats": [
+        {
+          "id": "map_expedition_encounter_scale_+%",
+          "min": 200,
+          "max": 200
+        },
+        {
+          "id": "map_expedition_explosives_+%",
+          "min": 80,
+          "max": 80
+        },
+        {
+          "id": "map_expedition_number_of_monster_markers_+%",
+          "min": 100,
+          "max": 100
+        },
+        {
+          "id": "map_expedition_relics_+",
+          "min": 2,
+          "max": 3
+        }
+      ],
+      "mods_dat_row": 40630
+    },
+    {
+      "id": "RandomJuiceModExpeditionRunicRares",
+      "league": "Expedition",
+      "modType": "RandomJuiceModExpeditionRunicRares",
+      "families": [
+        "RandomJuiceModExpeditionRunicRares"
+      ],
+      "stats": [
+        {
+          "id": "map_expedition_runic_monsters_at_least_rare",
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "mods_dat_row": 40631
+    },
+    {
+      "id": "RandomJuiceModExpeditionReviveObelisk",
+      "league": "Expedition",
+      "modType": "RandomJuiceModExpeditionReviveObelisk",
+      "families": [
+        "RandomJuiceModExpeditionReviveObelisk"
+      ],
+      "stats": [
+        {
+          "id": "map_expedition_encounter_spawn_revive_obelisk",
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "mods_dat_row": 40632
+    },
+    {
+      "id": "RandomJuiceModExpeditionRunicLieutenants",
+      "league": "Expedition",
+      "modType": "RandomJuiceModExpeditionRunicLieutenants",
+      "families": [
+        "RandomJuiceModExpeditionRunicLieutenants"
+      ],
+      "stats": [
+        {
+          "id": "map_expedition_lieutenant_marker_count_+",
+          "min": 2,
+          "max": 2
+        }
+      ],
+      "mods_dat_row": 40633
+    },
+    {
+      "id": "RandomJuiceModExpeditionLogbookChest",
+      "league": "Expedition",
+      "modType": "RandomJuiceModExpeditionLogbookChest",
+      "families": [
+        "RandomJuiceModExpeditionLogbookChest"
+      ],
+      "stats": [
+        {
+          "id": "map_expedition_contains_X_additional_logbook_chests",
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "mods_dat_row": 40634
+    },
+    {
+      "id": "RandomJuiceModExpeditionSpecialRemnants",
+      "league": "Expedition",
+      "modType": "RandomJuiceModExpeditionSpecialRemnants",
+      "families": [
+        "RandomJuiceModExpeditionSpecialRemnants"
+      ],
+      "stats": [
+        {
+          "id": "map_expedition_X_additional_special_remnant_modifiers",
+          "min": 2,
+          "max": 2
+        }
+      ],
+      "mods_dat_row": 40635
+    },
+    {
+      "id": "RandomJuiceModUltimatumInscribedOnly",
+      "league": "Ultimatum",
+      "modType": "RandomJuiceModUltimatumInscribedOnly",
+      "families": [
+        "RandomJuiceModUltimatumSingleRewardType"
+      ],
+      "stats": [
+        {
+          "id": "map_ultimatum_rewards_are_inscribed",
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "mods_dat_row": 40636
+    },
+    {
+      "id": "RandomJuiceModUltimatumCatalystOnly",
+      "league": "Ultimatum",
+      "modType": "RandomJuiceModUltimatumCatalystOnly",
+      "families": [
+        "RandomJuiceModUltimatumSingleRewardType"
+      ],
+      "stats": [
+        {
+          "id": "map_ultimatum_rewards_are_catalysts",
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "mods_dat_row": 40637
+    },
+    {
+      "id": "RandomJuiceModUltimatumTrialmaster",
+      "league": "Ultimatum",
+      "modType": "RandomJuiceModUltimatumTrialmaster",
+      "families": [
+        "RandomJuiceModUltimatumTrialmaster"
+      ],
+      "stats": [
+        {
+          "id": "map_ultimatum_leads_to_boss",
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "mods_dat_row": 40638
+    },
+    {
+      "id": "RandomJuiceModUltimatumHearts",
+      "league": "Ultimatum",
+      "modType": "RandomJuiceModUltimatumHearts",
+      "families": [
+        "RandomJuiceModUltimatumHearts"
+      ],
+      "stats": [
+        {
+          "id": "map_ultimatum_spawn_adrenaline_hearts",
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "mods_dat_row": 40639
+    },
+    {
+      "id": "RandomJuiceModUltimatumDoubleDown",
+      "league": "Ultimatum",
+      "modType": "RandomJuiceModUltimatumDoubleDown",
+      "families": [
+        "RandomJuiceModUltimatumDoubleDown"
+      ],
+      "stats": [
+        {
+          "id": "map_ultimatum_can_double_down_from_round_x",
+          "min": 7,
+          "max": 7
+        },
+        {
+          "id": "map_ultimatum_trialmaster_cannot_spawn",
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "mods_dat_row": 40640
+    },
+    {
+      "id": "RandomJuiceModUltimatumCursedCurrency",
+      "league": "Ultimatum",
+      "modType": "RandomJuiceModUltimatumCursedCurrency",
+      "families": [
+        "RandomJuiceModUltimatumCursedCurrency"
+      ],
+      "stats": [
+        {
+          "id": "map_ultimatum_spawn_x_cursed_currency_per_round",
+          "min": 1,
+          "max": 1
+        },
+        {
+          "id": "map_ultimatum_spawn_x_percent_cursed_currency_per_round_per_round",
+          "min": 20,
+          "max": 20
+        }
+      ],
+      "mods_dat_row": 40641
+    },
+    {
+      "id": "RandomJuiceModUltimatumSoulCore",
+      "league": "Ultimatum",
+      "modType": "RandomJuiceModUltimatumSoulCore",
+      "families": [
+        "RandomJuiceModUltimatumSoulCore"
+      ],
+      "stats": [
+        {
+          "id": "map_ultimatum_spawn_soul_core_object",
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "mods_dat_row": 40642
+    },
+    {
+      "id": "RandomJuiceModUltimatumOversouls",
+      "league": "Ultimatum",
+      "modType": "RandomJuiceModUltimatumOversouls",
+      "families": [
+        "RandomJuiceModUltimatumOversouls"
+      ],
+      "stats": [
+        {
+          "id": "map_ultimatum_x_rounds_spawn_oversoul",
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "mods_dat_row": 40643
+    },
+    {
+      "id": "RandomJuiceModUltimatumSecondaryStats",
+      "league": "Ultimatum",
+      "modType": "RandomJuiceModUltimatumSecondaryStats",
+      "families": [
+        "RandomJuiceModUltimatumSecondaryStats"
+      ],
+      "stats": [
+        {
+          "id": "map_ultimatum_enable_secondary_stats",
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "mods_dat_row": 40644
+    },
+    {
+      "id": "RandomJuiceModRitualNameless",
+      "league": "Ritual",
+      "modType": "RandomJuiceModRitualNameless",
+      "families": [
+        "RandomJuiceModRitualNameless"
+      ],
+      "stats": [
+        {
+          "id": "map_ritual_type_is_nameless",
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "mods_dat_row": 40645
+    },
+    {
+      "id": "RandomJuiceModRitualWildwoodWisp",
+      "league": "Ritual",
+      "modType": "RandomJuiceModRitualWildwoodWisp",
+      "families": [
+        "RandomJuiceModRitualWildwoodWisp"
+      ],
+      "stats": [
+        {
+          "id": "ritual_altars_spawn_wisp",
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "mods_dat_row": 40646
+    },
+    {
+      "id": "RandomJuiceModRitualBodach",
+      "league": "Ritual",
+      "modType": "RandomJuiceModRitualBodach",
+      "families": [
+        "RandomJuiceModRitualBodach"
+      ],
+      "stats": [
+        {
+          "id": "map_final_ritual_bodach_arena",
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "mods_dat_row": 40647
+    },
+    {
+      "id": "RandomJuiceModRitualTributeBoss",
+      "league": "Ritual",
+      "modType": "RandomJuiceModRitualTributeBoss",
+      "families": [
+        "RandomJuiceModRitualTributeBoss"
+      ],
+      "stats": [
+        {
+          "id": "map_ritual_final_ritual_expend_tribute_for_boss",
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "mods_dat_row": 40648
+    },
+    {
+      "id": "RandomJuiceModRitualBloodShrines",
+      "league": "Ritual",
+      "modType": "RandomJuiceModRitualBloodShrines",
+      "families": [
+        "RandomJuiceModRitualBloodShrines"
+      ],
+      "stats": [
+        {
+          "id": "map_ritual_gain_blood_shrine_on_completion",
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "mods_dat_row": 40649
+    },
+    {
+      "id": "RandomJuiceModBetrayalCatarina",
+      "league": "Betrayal",
+      "modType": "RandomJuiceModBetrayalCatarina",
+      "families": [
+        "RandomJuiceModBetrayalCatarina"
+      ],
+      "stats": [
+        {
+          "id": "map_betrayal_standalone_catarina",
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "mods_dat_row": 40650
+    },
+    {
+      "id": "RandomJuiceModBetrayalBuffs",
+      "league": "Betrayal",
+      "modType": "RandomJuiceModBetrayalBuffs",
+      "families": [
+        "RandomJuiceModBetrayalBuffs"
+      ],
+      "stats": [
+        {
+          "id": "map_betrayal_encounter_grant_buffs",
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "mods_dat_row": 40651
+    },
+    {
+      "id": "RandomJuiceModBetrayalSculpture",
+      "league": "Betrayal",
+      "modType": "RandomJuiceModBetrayalSculpture",
+      "families": [
+        "RandomJuiceModBetrayalSculpture"
+      ],
+      "stats": [
+        {
+          "id": "map_betrayal_spawn_corpse_sculpture",
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "mods_dat_row": 40652
+    },
+    {
+      "id": "RandomJuiceModBetrayalMonsterMod",
+      "league": "Betrayal",
+      "modType": "RandomJuiceModBetrayalMonsterMod",
+      "families": [
+        "RandomJuiceModBetrayalMonsterMod"
+      ],
+      "stats": [
+        {
+          "id": "map_betrayal_members_x_additional_mods",
+          "min": 2,
+          "max": 2
+        }
+      ],
+      "mods_dat_row": 40653
+    },
+    {
+      "id": "RandomJuiceModBetrayalFracture",
+      "league": "Betrayal",
+      "modType": "RandomJuiceModBetrayalFracture",
+      "families": [
+        "RandomJuiceModBetrayalFracture"
+      ],
+      "stats": [
+        {
+          "id": "map_betrayal_%_chance_veiled_items_to_drop_with_fractured_veiled_mod",
+          "min": 100,
+          "max": 100
+        }
+      ],
+      "mods_dat_row": 40654
+    },
+    {
+      "id": "RandomJuiceModBetrayalChestClusters",
+      "league": "Betrayal",
+      "modType": "RandomJuiceModBetrayalChestClusters",
+      "families": [
+        "RandomJuiceModBetrayalChestClusters"
+      ],
+      "stats": [
+        {
+          "id": "map_betrayal_spawn_research_chest_clusters",
+          "min": 14,
+          "max": 18
+        }
+      ],
+      "mods_dat_row": 40655
+    },
+    {
+      "id": "RandomJuiceModAbyssConsort",
+      "league": "Abyss",
+      "modType": "RandomJuiceModAbyssConsort",
+      "families": [
+        "RandomJuiceModAbyssConsort"
+      ],
+      "stats": [
+        {
+          "id": "map_final_abyss_pit_spawn_abyss_miniboss",
+          "min": 100,
+          "max": 100
+        }
+      ],
+      "mods_dat_row": 40656
+    },
+    {
+      "id": "RandomJuiceModAbyssExtraAbysses",
+      "league": "Abyss",
+      "modType": "RandomJuiceModAbyssExtraAbysses",
+      "families": [
+        "RandomJuiceModAbyssExtraAbysses"
+      ],
+      "stats": [
+        {
+          "id": "map_num_extra_abysses",
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "mods_dat_row": 40657
+    },
+    {
+      "id": "RandomJuiceModAbyssElitePairs",
+      "league": "Abyss",
+      "modType": "RandomJuiceModAbyssElitePairs",
+      "families": [
+        "RandomJuiceModAbyssElitePairs"
+      ],
+      "stats": [
+        {
+          "id": "map_abyss_elite_monsters_paired",
+          "min": 100,
+          "max": 100
+        }
+      ],
+      "mods_dat_row": 40658
+    },
+    {
+      "id": "RandomJuiceModAbyssMortars",
+      "league": "Abyss",
+      "modType": "RandomJuiceModAbyssMortars",
+      "families": [
+        "RandomJuiceModAbyssMortars"
+      ],
+      "stats": [
+        {
+          "id": "map_abyss_pits_fire_mortars",
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "mods_dat_row": 40659
+    },
+    {
+      "id": "RandomJuiceModAbyssMonsterMods",
+      "league": "Abyss",
+      "modType": "RandomJuiceModAbyssMonsterMods",
+      "families": [
+        "RandomJuiceModAbyssMonsterMods"
+      ],
+      "stats": [
+        {
+          "id": "map_abyss_rares_x_additional_abyss_mods",
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "mods_dat_row": 40660
+    },
+    {
+      "id": "RandomJuiceModIncursionGoldenDoors",
+      "league": "Incursion",
+      "modType": "RandomJuiceModIncursionGoldenDoors",
+      "families": [
+        "RandomJuiceModIncursionGoldenDoors"
+      ],
+      "stats": [
+        {
+          "id": "map_incursion_can_have_golden_doors",
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "mods_dat_row": 40661
+    },
+    {
+      "id": "RandomJuiceModIncursionDoorUnlockingObject",
+      "league": "Incursion",
+      "modType": "RandomJuiceModIncursionDoorUnlockingObject",
+      "families": [
+        "RandomJuiceModIncursionDoorUnlockingObject"
+      ],
+      "stats": [
+        {
+          "id": "map_incursion_contains_door_unlocking_object",
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "mods_dat_row": 40662
+    },
+    {
+      "id": "RandomJuiceModIncursionReplacePacksWithArchitects",
+      "league": "Incursion",
+      "modType": "RandomJuiceModIncursionReplacePacksWithArchitects",
+      "families": [
+        "RandomJuiceModIncursionReplacePacksWithArchitects"
+      ],
+      "stats": [
+        {
+          "id": "map_incursion_replaced_with_standalone_architects",
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "mods_dat_row": 40663
+    },
+    {
+      "id": "RandomJuiceModIncursionContainsVaalVessels",
+      "league": "Incursion",
+      "modType": "RandomJuiceModIncursionContainsVaalVessels",
+      "families": [
+        "RandomJuiceModIncursionContainsVaalVessels"
+      ],
+      "stats": [
+        {
+          "id": "map_incursion_contains_x_vaal_vessels",
+          "min": 2,
+          "max": 3
+        }
+      ],
+      "mods_dat_row": 40664
+    },
+    {
+      "id": "RandomJuiceModIncursionContainsGoldPiles",
+      "league": "Incursion",
+      "modType": "RandomJuiceModIncursionContainsGoldPiles",
+      "families": [
+        "RandomJuiceModIncursionContainsGoldPiles"
+      ],
+      "stats": [
+        {
+          "id": "map_incursion_contains_x_gold_piles",
+          "min": 3,
+          "max": 8
+        }
+      ],
+      "mods_dat_row": 40665
+    },
+    {
+      "id": "RandomJuiceModIncursionContainsTempests",
+      "league": "Incursion",
+      "modType": "RandomJuiceModIncursionContainsTempests",
+      "families": [
+        "RandomJuiceModIncursionContainsTempests"
+      ],
+      "stats": [
+        {
+          "id": "map_incursion_contains_tempests",
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "mods_dat_row": 40666
+    },
+    {
+      "id": "RandomJuiceModIncursionContainsCursedTreasure",
+      "league": "Incursion",
+      "modType": "RandomJuiceModIncursionContainsCursedTreasure",
+      "families": [
+        "RandomJuiceModIncursionContainsCursedTreasure"
+      ],
+      "stats": [
+        {
+          "id": "map_alva_cursed_treasure",
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "mods_dat_row": 40667
+    },
+    {
+      "id": "RandomJuiceModIncursionContainsFleshMerchant",
+      "league": "Incursion",
+      "modType": "RandomJuiceModIncursionContainsFleshMerchant",
+      "families": [
+        "RandomJuiceModIncursionContainsFleshMerchant"
+      ],
+      "stats": [
+        {
+          "id": "map_incursions_spawn_special_monster",
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "mods_dat_row": 40668
+    },
+    {
+      "id": "RandomJuiceModLegionAdditionalLegion",
+      "league": "Legion",
+      "modType": "RandomJuiceModLegionAdditionalLegion",
+      "families": [
+        "RandomJuiceModLegionAdditionalLegion"
+      ],
+      "stats": [
+        {
+          "id": "map_legion_league_extra_spawns",
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "mods_dat_row": 40669
+    },
+    {
+      "id": "RandomJuiceModLegionEternalConflict",
+      "league": "Legion",
+      "modType": "RandomJuiceModLegionEternalConflict",
+      "families": [
+        "RandomJuiceModLegionEternalConflict"
+      ],
+      "stats": [
+        {
+          "id": "map_legion_multiple_breakout_chance_%",
+          "min": 50,
+          "max": 50
+        }
+      ],
+      "mods_dat_row": 40670
+    },
+    {
+      "id": "RandomJuiceModLegionBothLegionsHaveGenerals",
+      "league": "Legion",
+      "modType": "RandomJuiceModLegionBothLegionsHaveGenerals",
+      "families": [
+        "RandomJuiceModLegionBothLegionsHaveGenerals"
+      ],
+      "stats": [
+        {
+          "id": "map_legion_league_force_general",
+          "min": 1,
+          "max": 1
+        },
+        {
+          "id": "map_legion_generals_spawn_both_generals_chance_%",
+          "min": 50,
+          "max": 50
+        }
+      ],
+      "mods_dat_row": 40671
+    },
+    {
+      "id": "RandomJuiceModLegionInstantBreakout",
+      "league": "Legion",
+      "modType": "RandomJuiceModLegionInstantBreakout",
+      "families": [
+        "RandomJuiceModLegionInstantBreakout"
+      ],
+      "stats": [
+        {
+          "id": "map_legion_instant_breakout_chance_%",
+          "min": 50,
+          "max": 50
+        }
+      ],
+      "mods_dat_row": 40672
+    },
+    {
+      "id": "RandomJuiceModLegionAllChestsAreWarHoards",
+      "league": "Legion",
+      "modType": "RandomJuiceModLegionAllChestsAreWarHoards",
+      "families": [
+        "RandomJuiceModLegionAllChestsAreWarHoards"
+      ],
+      "stats": [
+        {
+          "id": "map_legion_all_chests_war_hoards_chance_%",
+          "min": 50,
+          "max": 50
+        }
+      ],
+      "mods_dat_row": 40673
+    },
+    {
+      "id": "RandomJuiceModLegionSmallCrystals",
+      "league": "Legion",
+      "modType": "RandomJuiceModLegionSmallCrystals",
+      "families": [
+        "RandomJuiceModLegionSmallCrystals"
+      ],
+      "stats": [
+        {
+          "id": "map_legion_small_crystals_chance_%",
+          "min": 50,
+          "max": 50
+        }
+      ],
+      "mods_dat_row": 40674
+    },
+    {
+      "id": "RandomJuiceModLegionInvertedLegion",
+      "league": "Legion",
+      "modType": "RandomJuiceModLegionInvertedLegion",
+      "families": [
+        "RandomJuiceModLegionInvertedLegion"
+      ],
+      "stats": [
+        {
+          "id": "map_legion_inverted_legion_chance_%",
+          "min": 50,
+          "max": 50
+        }
+      ],
+      "mods_dat_row": 40675
+    },
+    {
+      "id": "RandomJuiceModLegionMonstersRankHigher",
+      "league": "Legion",
+      "modType": "RandomJuiceModLegionMonstersRankHigher",
+      "families": [
+        "RandomJuiceModLegionMonstersRankHigher"
+      ],
+      "stats": [
+        {
+          "id": "map_legion_upgrade_monster_rank_chance_%",
+          "min": 50,
+          "max": 50
+        }
+      ],
+      "mods_dat_row": 40676
+    },
+    {
+      "id": "RandomJuiceModBestiaryExtraRedBeasts",
+      "league": "Bestiary",
+      "modType": "RandomJuiceModBestiaryExtraRedBeasts",
+      "families": [
+        "RandomJuiceModBestiaryExtraRedBeasts"
+      ],
+      "stats": [
+        {
+          "id": "map_additional_red_beasts",
+          "min": 2,
+          "max": 4
+        }
+      ],
+      "mods_dat_row": 40677
+    },
+    {
+      "id": "RandomJuiceModBestiaryRedBeastInvasion",
+      "league": "Bestiary",
+      "modType": "RandomJuiceModBestiaryRedBeastInvasion",
+      "families": [
+        "RandomJuiceModBestiaryRedBeastInvasion"
+      ],
+      "stats": [
+        {
+          "id": "map_additional_red_beasts",
+          "min": 18,
+          "max": 20
+        }
+      ],
+      "mods_dat_row": 40678
+    },
+    {
+      "id": "RandomJuiceModBestiaryBlackMorrigan",
+      "league": "Bestiary",
+      "modType": "RandomJuiceModBestiaryBlackMorrigan",
+      "families": [
+        "RandomJuiceModBestiaryBlackMorrigan"
+      ],
+      "stats": [
+        {
+          "id": "map_bestiary_area_contains_black_morrigan",
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "mods_dat_row": 40679
+    },
+    {
+      "id": "RandomJuiceModBestiaryExtraHarvestBeasts",
+      "league": "Bestiary",
+      "modType": "RandomJuiceModBestiaryExtraHarvestBeasts",
+      "families": [
+        "RandomJuiceModBestiaryExtraHarvestBeasts"
+      ],
+      "stats": [
+        {
+          "id": "map_X_bestiary_packs_are_harvest_beasts",
+          "min": 2,
+          "max": 3
+        }
+      ],
+      "mods_dat_row": 40680
+    },
+    {
+      "id": "RandomJuiceModBestiaryBeastsHaveWisps",
+      "league": "Bestiary",
+      "modType": "RandomJuiceModBestiaryBeastsHaveWisps",
+      "families": [
+        "RandomJuiceModBestiaryBeastsHaveWisps"
+      ],
+      "stats": [
+        {
+          "id": "map_bestiary_beasts_have_x_wisps_of_all_types",
+          "min": 2000,
+          "max": 2000
+        }
+      ],
+      "mods_dat_row": 40681
+    },
+    {
+      "id": "RandomJuiceModBestiaryBeastsEinharBloodAura",
+      "league": "Bestiary",
+      "modType": "RandomJuiceModBestiaryBeastsEinharBloodAura",
+      "families": [
+        "RandomJuiceModBestiaryBeastsEinharBloodAura"
+      ],
+      "stats": [
+        {
+          "id": "map_bestiary_einhar_blood_explode_aura",
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "mods_dat_row": 40682
+    },
+    {
+      "id": "RandomJuiceModBestiaryYellowBeastsReplacedWithAzmeriHulks",
+      "league": "Bestiary",
+      "modType": "RandomJuiceModBestiaryYellowBeastsReplacedWithAzmeriHulks",
+      "families": [
+        "RandomJuiceModBestiaryYellowBeastsReplacedWithAzmeriHulks"
+      ],
+      "stats": [
+        {
+          "id": "map_bestiary_yellow_beasts_are_hulks",
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "mods_dat_row": 40683
+    },
+    {
+      "id": "RandomJuiceModBreachWombgiftRareDrops",
+      "league": "Breach",
+      "modType": "RandomJuiceModBreachWombgiftRareDrops",
+      "families": [
+        "RandomJuiceModBreachWombgiftRareDrops"
+      ],
+      "stats": [
+        {
+          "id": "map_breach_rare_additional_wombgift_chance_%",
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "mods_dat_row": 40684
+    },
+    {
+      "id": "RandomJuiceModBreachGuaranteedBoss",
+      "league": "Breach",
+      "modType": "RandomJuiceModBreachGuaranteedBoss",
+      "families": [
+        "RandomJuiceModBreachGuaranteedBoss"
+      ],
+      "stats": [
+        {
+          "id": "map_unstable_breach_spawns_boss",
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "mods_dat_row": 40685
+    },
+    {
+      "id": "RandomJuiceModBreachGuaranteedFortress",
+      "league": "Breach",
+      "modType": "RandomJuiceModBreachGuaranteedFortress",
+      "families": [
+        "RandomJuiceModBreachGuaranteedFortress"
+      ],
+      "stats": [
+        {
+          "id": "map_breach_hive_is_always_sky_fortress",
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "mods_dat_row": 40686
+    },
+    {
+      "id": "RandomJuiceModBreachAdditionalUnstableBreaches",
+      "league": "Breach",
+      "modType": "RandomJuiceModBreachAdditionalUnstableBreaches",
+      "families": [
+        "RandomJuiceModBreachAdditionalUnstableBreaches"
+      ],
+      "stats": [
+        {
+          "id": "map_contains_additional_unstable_breaches",
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "mods_dat_row": 40687
+    },
+    {
+      "id": "RandomJuiceModBreachGenesisSaplingTree",
+      "league": "Breach",
+      "modType": "RandomJuiceModBreachGenesisSaplingTree",
+      "families": [
+        "RandomJuiceModBreachGenesisSaplingTree"
+      ],
+      "stats": [
+        {
+          "id": "map_breach_contains_genesis_tree_sapling",
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "mods_dat_row": 40688
+    },
+    {
+      "id": "RandomJuiceModBreachEstablishedSpreadCoffers",
+      "league": "Breach",
+      "modType": "RandomJuiceModBreachEstablishedSpreadCoffers",
+      "families": [
+        "RandomJuiceModBreachEstablishedSpreadCoffers"
+      ],
+      "stats": [
+        {
+          "id": "map_breach_hives_contain_spread_coffers",
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "mods_dat_row": 40689
+    },
+    {
+      "id": "RandomJuiceModBreachRareMonstersBreachMonsterMods",
+      "league": "Breach",
+      "modType": "RandomJuiceModBreachRareMonstersBreachMonsterMods",
+      "families": [
+        "RandomJuiceModBreachRareMonstersBreachMonsterMods"
+      ],
+      "stats": [
+        {
+          "id": "map_breach_rares_x_additional_breach_mods",
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "mods_dat_row": 40690
+    },
+    {
+      "id": "RandomJuiceModBreachEmpoweredAilithSkills",
+      "league": "Breach",
+      "modType": "RandomJuiceModBreachEmpoweredAilithSkills",
+      "families": [
+        "RandomJuiceModBreachEmpoweredAilithSkills"
+      ],
+      "stats": [
+        {
+          "id": "map_breach_empowered_ailith_skills",
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "mods_dat_row": 40691
+    }
+  ]
+}
