@@ -30,12 +30,13 @@ climbs with every Thread count: about 6 mods per map at 3/3/3, 7.6 at 6/6/6 and 
 we're poor and throwing away at least 20c per map to do 8/8/8 runs).
 
 **So add Threads until the next one costs too much.** The early steps are cheap, the late ones
-are brutal. Here's how much tankiness each extra Thread adds:
+are brutal. Here's what each extra Thread adds:
 
 | Going from | 2→3  | 3→4  | 4→5  | 5→6  |  6→7  |  7→8  |
 | ---------- | :--: | :--: | :--: | :--: | :---: | :---: |
 | Tankiness  | +15% | +30% | +50% | +90% | +170% | +320% |
 | Damage     | +5%  | +5%  | +5%  | +5%  |  +8%  | +12%  |
+| Rarity     | +10% | +13% | +14% | +18% | +23%  | +32%  |
 
 Up to about 5 or 6, each step is small enough that the extra juice is worth a look. From 6
 on, a single extra Thread adds more tankiness than the first five put together. Where you stop
