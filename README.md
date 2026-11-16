@@ -378,6 +378,8 @@ if your build can take it, always fill all three slots, and skip solo 10.**
 
 ## The raw data
 
-Everything above comes from the research notes in [`findings/`](findings/). That's where to
+The data was gathered with custom tools built for this project, which read the game's process
+memory and log what they find for each map. Everything above comes from the research notes in
+[`findings/`](findings/). That's where to
 look for the per-map numbers, how each juice mod was detected, the full juice tables, and the
 map log and analyzer if you want to check our work.
