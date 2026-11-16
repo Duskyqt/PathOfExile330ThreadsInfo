@@ -2,6 +2,10 @@
 
 _Path of Exile 3.30 · data collected 2026-11-15 and 2026-11-16_
 
+> **Disclaimer:** this data only covers the modifiers that Threads apply to a map. In-game
+> interactions between objects, such as the "Blighted Strongbox", don't show up in it, because
+> they aren't as easily quantified.
+
 Threads replaced scarabs in 3.30, and the game won't tell you what they do. The tooltip is
 blank, the map device shows nothing, and the client's own data files have empty slots where
 the effects should be.
