@@ -30,19 +30,26 @@ climbs with every Thread count: about 6 mods per map at 3/3/3, 7.6 at 6/6/6 and 
 we're poor and throwing away at least 20c per map to do 8/8/8 runs).
 
 **So add Threads until the next one costs too much.** The early steps are cheap, the late ones
-are brutal. Here's what each extra Thread adds:
+are brutal. Here's what each extra Thread adds, in percentage points of each stat (so 7→8 takes
+tankiness from +380% to +700%):
 
-| Going from | 2→3  | 3→4  | 4→5  | 5→6  |  6→7  |  7→8  | 8→9\* | 9→10\* |
-| ---------- | :--: | :--: | :--: | :--: | :---: | :---: | :---: | :----: |
-| Tankiness  | +15% | +30% | +50% | +90% | +170% | +320% | +350% | +350%  |
-| Damage     | +5%  | +5%  | +5%  | +5%  |  +8%  | +12%  |  +5%  |  +5%   |
-| Rarity     | +10% | +13% | +14% | +18% | +23%  | +32%  | +20%  |  +15%  |
+| Going from          | 2→3   | 3→4   | 4→5   | 5→6   | 6→7   | 7→8   | 8→9\* | 9→10\* |
+| ------------------- | :---: | :---: | :---: | :---: | :---: | :---: | :----: | :-----: |
+| Tankiness (points)  | +15   | +30   | +50   | +90   | +170  | +320  | +350   | +350    |
+| Monsters this much tankier | ×1.12 | ×1.21 | ×1.29 | ×1.41 | ×1.55 | ×1.67 | ×1.44 | ×1.30 |
+| Damage (points)     | +5    | +5    | +5    | +5    | +8    | +12   | +5     | +5      |
+| Rarity (points)     | +10   | +13   | +14   | +18   | +23   | +32   | +20    | +15     |
 
 \* _9 and 10 Threads need the atlas passive that lifts the cap, and only work with a single
 league mechanic slotted._
 
+The "tankier" row assumes +700% tankiness means monsters take 8× as long to kill. That's the
+natural reading, but we can only see the stat, not exactly how the game applies it. The 2, 4,
+5, 7 and 9 Thread values each come from a single map.
+
 Up to about 5 or 6, each step is small enough that the extra juice is worth a look. From 6
-on, a single extra Thread adds more tankiness than the first five put together. Where you stop
+on, each extra Thread makes those monsters at least 1.3× tankier, and 7→8 is the steepest step
+of all. Where you stop
 depends on where your build hits that wall: 3/3/3 if you're starting out, 6/6/6 for small budgets, 8/8/8 if you are an actual giga blaster because it's extremely rippy.
 
 **A few rules of thumb:**
@@ -91,8 +98,8 @@ Here's how it scales:
 league mechanic is slotted._
 
 Look at the gap between the last two columns. At 3 Threads, monsters get 40% tankier for 25%
-more rarity. That's a fair trade. At 8 Threads they're **seven times** as tanky for barely more
-than double the rarity.
+more rarity. That's a fair trade. At 8 Threads they're **eight times** as tanky (+700%) for +125%
+rarity.
 
 The bold rows are the most solid in the table. 3 and 6 were each measured on 52 league slots
 across 18 maps, and 8 on 53 slots across 20 maps. Every one of them matched.
