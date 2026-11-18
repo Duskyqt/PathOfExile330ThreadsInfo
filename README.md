@@ -293,6 +293,13 @@ Two mods show the trend especially clearly:
 Legion Threads, and Fracture, Sculpture, Free Towers and Inverted Legion at 6. So these mods are
 rare, not locked to a Thread count. The lists below show where each was first seen.
 
+The likely explanation: **every mod can roll at any Thread count, with the same odds each roll.**
+More Threads just mean more rolls, so the rare ones show up more often. A league rarely rolls the
+same mod twice in a map, so once the common mods are taken, extra rolls land on the rare ones.
+We checked this with a simulation, and the data fits it well (the details are in
+[`findings/juice-mods.md`](findings/juice-mods.md#working-explanation-fixed-odds-more-rolls)).
+The exceptions are the mods GGG gave a minimum area level in the hotfix.
+
 Any single mod on these lists could still be bad luck. Each league mechanic only appeared in
 about 5 maps per Thread count, and a mod that rolls once in ten maps can easily miss five in a
 row. But 18 mods all showing up for the first time as the Thread count rose is a lot harder to
@@ -389,8 +396,8 @@ undercount.
 1. **How much is a juice mod worth?** We can count them, but whether 10 juice mods at 8/8/8
    beat 6 at 3/3/3 once you factor in the extra clear time depends on your build and which mods
    you get.
-2. **Do rare mods get more common at higher Thread counts?** They don't unlock at a count:
-   several "first seen at 8" mods later rolled at 2 and 6.
+2. **Do rare mods' odds change with Thread count?** The data so far fits fixed odds, with more
+   rolls doing all the work, but with about 20 maps per league only a large effect would show.
 3. **Legion above 3.** We need more maps to pin down how its extra spawns roll.
 4. **Does solo 10 starve every league mechanic, or just Legion?** One 10-Abyss map rolled 5
    juice mods. A few more solo 10 maps on other league mechanics would tell.

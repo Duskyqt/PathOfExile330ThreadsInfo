@@ -100,6 +100,38 @@ Sculpture, FreeTowers and InvertedLegion at 6. These mods are rare, and about 5 
 Thread count was too few to catch them lower. See
 [results-1116-mixed.md](results-1116-mixed.md#the-only-at-8-mods-rolled-lower).
 
+## Working explanation: fixed odds, more rolls
+
+Every juice mod can roll at any Thread count with the same chance per roll; the exceptions are
+the mods given a minimum area level in the hotfix. Higher Thread counts roll more juice per league,
+so rare mods simply turn up more often. The pre-patch data fits this.
+
+- **More rolls.** Juice per league slot was 1.6 at 3 Threads, 2.2 at 4–7 and 3.1 at 8 or more
+  (tree 1 and 3 maps, not counting AdditionalLegion and AdditionalUnstableBreaches).
+- **Common mods get used up.** A league mostly rolls each mod at most once per map, so the more
+  it rolls, the more of its picks fall on the rare mods. With fixed odds, the 18 mods "first seen
+  at 6 or 8" should make up 14% of a league's mods at 3 Threads and 18% at 8 or more, from the roll
+  count alone.
+- **Few maps.** At about 5 maps per league per Thread count, a mod with roughly a 5% chance often
+  misses all of them.
+
+**The test.** Each mod got one fixed weight, from how often it rolled across all maps. Each
+league slot then drew as many distinct mods as it really rolled, from its own pool, weighted and
+without repeats. Simulating the whole dataset 1,500 times gave the expected count for every mod at
+3, 4–7 and 8+ Threads. The real data's mismatch from those counts was 70, against a median of 115
+and a 95th percentile of 144 across 400 simulated datasets. No league stood out (each scored 3 to
+10).
+
+**Caveats.**
+- Fitting holds, but proving is beyond this data: with about 20 maps per league, only a large
+  Thread-count effect would have shown up.
+- The weights were taken from the same data the test checks, which makes the fit look somewhat
+  better than it is.
+- Picking the 18 "rare" mods by where they were first seen guarantees they look absent at 3, so
+  the comparison of rare shares (2% observed at 3 against 14% expected) is biased and isn't the
+  evidence. The test over every mod is.
+- The area-level-floor mods weren't treated separately. Nearly every map was area level 77–83.
+
 ## First seen at 6 Threads (10)
 
 Ultimatum CatalystOnly, Trialmaster, DoubleDown and Oversouls; Breach GuaranteedFortress and
