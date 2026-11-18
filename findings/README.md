@@ -15,6 +15,7 @@ them from game memory while running maps with known Thread setups.
 | [results-666.md](results-666.md) | The 6/6/6 run: the same 17 combinations at 6 Threads, mostly at area level 77–78. More juice and new juice mods; the extra league content comes through juice |
 | [results-888.md](results-888.md) | Fourteen 8/8/8 maps in three league combinations plus five two-league Breach / Ritual 8/8 maps. Juice keeps rising, eight juice mods first seen at 8, juice is per league, and Breach's hive-or-unstable-breaches branch |
 | [results-solo10.md](results-solo10.md) | Five solo 10-Thread Legion maps. About 2 juice per map, less than Legion gets at 8, for twice the tankiness |
+| [results-1116-mixed.md](results-1116-mixed.md) | The last 19 maps before the 2026-11-18 patch: uneven splits, a Bestiary atlas tree, Legion at 2, and maps without Threads. Several "first seen at 8" mods rolled at 2 or 6 |
 | [plan-666.md](plan-666.md) | The plan for the 6/6/6 run, as written before it |
 
 Short version:
@@ -22,8 +23,8 @@ Short version:
   rarity. The values depend only on that league's own Thread count.
 - **Juice mods.** On top of that, each map rolls up to 12 juice mods, picked by the server. More
   Threads mean more juice: 5.8 rolls per map at 3/3/3, 7.6 at 6/6/6 and 10.2 at 8/8/8. Ten mods
-  were first seen at 6 and eight more at 8, though with about 5 maps per league per Thread count
-  that may be rarity rather than a hard unlock. Juice is decided per league, so a two-league map gets
+  were first seen at 6 and eight more at 8, but later maps caught several of them at 2 and 6
+  Threads, so they're rare rather than locked to a Thread count. Juice is decided per league, so a two-league map gets
   about a third less. Map tier doesn't change the juice count. In a small solo 10-Legion test,
   Legion rolled less juice at 10 Threads than at 8 (2.0 per map against 3.4).
 - **Mixing.** Which leagues share a map has shown no effect in two full pair-coverage runs.
@@ -34,8 +35,9 @@ Short version:
 - [`data/maplog.jsonl`](../data/maplog.jsonl): every logged map, one line per version of the map's stats.
   - Keyed by area hash.
   - A new version is logged when the stats change mid-map, for example from altars or monoliths.
-  - Snapshot from 2026-11-16, after the 6/6/6 run, 14 maps at 8/8/8, 5 at Breach / Ritual 8/8
-    and 5 solo 10-Legion maps.
+  - Snapshot from 2026-11-16, the complete pre-patch log: the last map is 2026-11-16T18:11,
+    before the 2026-11-18 Thread patch. Pass `--since` to `analyze.py` to read post-patch maps
+    from the live log.
 - [`data/juice-mods.json`](../data/juice-mods.json): the 70 `RandomJuiceMod*` rows from Mods.dat, with their stats and
   roll ranges.
 

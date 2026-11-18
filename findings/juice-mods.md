@@ -94,6 +94,12 @@ only on unstable-breach maps. The unstable-breach count (2 to 4) may come partly
 so AdditionalUnstableBreaches' repeat rolls are uncertain. See
 [results-888.md](results-888.md#breach-hive-or-unstable-breaches).
 
+**Correction (2026-11-16 afternoon maps):** the two lists below record where each mod was first
+seen, not a Thread count it needs. SmallCrystals later rolled at 2 Legion Threads, and Fracture,
+Sculpture, FreeTowers and InvertedLegion at 6. These mods are rare, and about 5 maps per league per
+Thread count was too few to catch them lower. See
+[results-1116-mixed.md](results-1116-mixed.md#the-only-at-8-mods-rolled-lower).
+
 ## First seen at 6 Threads (10)
 
 Ultimatum CatalystOnly, Trialmaster, DoubleDown and Oversouls; Breach GuaranteedFortress and

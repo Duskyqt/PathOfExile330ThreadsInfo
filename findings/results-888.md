@@ -103,6 +103,10 @@ at 6 (in [juice-mods.md](juice-mods.md#first-seen-at-6-threads-10)), some mods l
 locked behind a Thread count or much more common above it. With about 5 maps per league per
 Thread count, a rare mod can easily miss every map, so this can't tell the two apart.
 
+**Update:** later maps settled it. SmallCrystals rolled at 2 Legion Threads, and Fracture,
+Sculpture, FreeTowers and InvertedLegion at 6, so these mods are rare, not locked to 8. See
+[results-1116-mixed.md](results-1116-mixed.md#the-only-at-8-mods-rolled-lower).
+
 Mods that had been rare turned up again too: Red Beast Invasion (22 red beasts = one Invasion
 plus one ExtraRedBeasts), Ultimatum DoubleDown, and Expedition RunicRares (2 maps).
 

@@ -65,7 +65,8 @@ mods and league content. The rarity stat affects only monsters from that league.
   combinations, and ten juice mods first appeared at 6. What each league's Threads give on their
   own stayed the same from 3 to 6. Legion's extra spawns varied between 1 and 4 at 6. So 6 may pay
   better than rarity alone suggests. Fourteen [8/8/8 maps](results-888.md) rolled 10.2 juice per
-  map, and eight juice mods only appeared at 8.
+  map. Some juice mods were first seen at 6 or 8, but later maps caught several of them at lower
+  counts, so they're rare rather than locked to a Thread count.
 - **Slot three leagues, not two.** Juice is decided per league: two-league 8/8 maps rolled 6.6
   juice, the same per league as three-league maps. A third league adds its juice and its rarity,
   at the cost of one more group of tankier monsters. A tier-11 map rolled as much juice as the tier

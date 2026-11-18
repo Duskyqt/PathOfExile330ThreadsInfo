@@ -289,6 +289,10 @@ Two mods show the trend especially clearly:
 - **Abyss Mortars:** 0 of 5 Abyss maps at 3 Threads, 5 of 5 at 6.
 - **Legion Small Crystals:** 0 of 5 Legion maps at 3, 2 of 5 at 6, 5 of 5 at 8.
 
+**Update:** maps run later on 16/11 caught several of these lower. Small Crystals rolled at 2
+Legion Threads, and Fracture, Sculpture, Free Towers and Inverted Legion at 6. So these mods are
+rare, not locked to a Thread count. The lists below show where each was first seen.
+
 Any single mod on these lists could still be bad luck. Each league mechanic only appeared in
 about 5 maps per Thread count, and a mod that rolls once in ten maps can easily miss five in a
 row. But 18 mods all showing up for the first time as the Thread count rose is a lot harder to
@@ -385,8 +389,8 @@ undercount.
 1. **How much is a juice mod worth?** We can count them, but whether 10 juice mods at 8/8/8
    beat 6 at 3/3/3 once you factor in the extra clear time depends on your build and which mods
    you get.
-2. **Do mods really unlock at a Thread count, or just get more common?** More maps at 3 and 6
-   would tell the difference.
+2. **Do rare mods get more common at higher Thread counts?** They don't unlock at a count:
+   several "first seen at 8" mods later rolled at 2 and 6.
 3. **Legion above 3.** We need more maps to pin down how its extra spawns roll.
 4. **Does solo 10 starve every league mechanic, or just Legion?** One 10-Abyss map rolled 5
    juice mods. A few more solo 10 maps on other league mechanics would tell.
@@ -405,3 +409,9 @@ memory and log what they find for each map. Everything above comes from the rese
 [`findings/`](findings/). That's where to
 look for the per-map numbers, how each juice mod was detected, the full juice tables, and the
 map log and analyzer if you want to check our work.
+
+**Everything here is from before the 2026-11-18 Thread patch,** which changes the tankiness,
+rarity and damage curves, adds a league stat at 3, 6 and 8 Threads, guarantees more juice at
+higher Thread counts and adds new juice mods. The map log has no game version in it, so the two
+eras are split by time: the snapshot in `data/maplog.jsonl` ends 2026-11-16T18:11, and the
+analyzer takes `--since` and `--until` to keep later maps apart.

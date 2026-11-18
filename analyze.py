@@ -46,12 +46,17 @@ SET_STATS = {
 }
 
 
-def load_maps(path):
+def load_maps(path, since=None, until=None):
+    """Each map's last version, for maps carrying map_tier. since/until bound the record time
+    (ISO, compared as text, e.g. 2026-11-18T17:15): records carry no game version, so a patch is
+    told apart by time alone."""
     last = {}
     with open(path, encoding="utf-8") as f:
         for line in f:
             if line.strip():
                 record = json.loads(line)
+                if (since and record["time"] < since) or (until and record["time"] >= until):
+                    continue
                 last[record["areaHash"]] = record
     return [r for r in last.values() if "map_tier" in r["stats"]]
 
@@ -69,6 +74,7 @@ def mix(stats):
 # "Thread-only stats" section shows new counts.
 THREAD_BASE = {
     "legion": {
+        2: {"map_legion_league_extra_spawns": None},  # read 2 and 1 on two solo maps
         3: {"map_legion_league_extra_spawns": 2},
         6: {"map_legion_league_extra_spawns": None},
         8: {"map_legion_league_extra_spawns": None},  # read 3, 4, 3, 4, 3 across five 8/8/8 maps
@@ -285,9 +291,11 @@ def main():
     ap.add_argument("--log", default=os.path.join(CONFIG, "maplog.jsonl"))
     ap.add_argument("--juice", default=os.path.join(CONFIG, "juice-mods.json"))
     ap.add_argument("--suggest", type=int, default=5, help="how many gap-filling triples to suggest")
+    ap.add_argument("--since", help="only records at or after this time, e.g. 2026-11-18T17:15")
+    ap.add_argument("--until", help="only records before this time")
     args = ap.parse_args()
 
-    maps = load_maps(args.log)
+    maps = load_maps(args.log, args.since, args.until)
     with open(args.juice, encoding="utf-8") as f:
         juice = json.load(f)["mods"]
     juice_by_league = defaultdict(list)
