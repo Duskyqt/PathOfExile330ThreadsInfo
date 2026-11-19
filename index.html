@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>What Threads Actually Do to Your Maps · Path of Exile 3.30</title>
-<meta name="description" content="Path of Exile 3.30 Threads, measured from game memory: the damage, tankiness and rarity each Thread count adds, and the hidden juice mods they roll.">
+<meta name="description" content="Path of Exile 3.30 Threads after the 2026-11-18 patch, measured from game memory: the damage, tankiness and rarity each Thread count adds.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&display=swap" rel="stylesheet">
@@ -241,7 +241,7 @@
         h.appendChild(a);
       }
     });
-    if (!heads.length) { tocEl.remove(); return; }
+    if (heads.length < 2) { tocEl.remove(); return; }
     const ul = document.createElement("ul");
     heads.forEach(h => {
       const li = document.createElement("li");
