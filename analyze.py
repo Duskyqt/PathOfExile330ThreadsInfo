@@ -82,16 +82,30 @@ THREAD_BASE = {
     },
 }
 
+# The 2026-11-18 patch gave each league an extra stat of its own at 3, 6 and 8 Threads, so maps
+# from then on use this table instead. Leagues get the 3-Thread tier from 3 to 5 Threads, the 6 tier
+# at 6-7 and the 8 tier from 8 up (Incursion 4 and Expedition 9 and 10 showed this).
+PATCH_TIME = "2026-11-18"
+_TIER = {3: 3, 4: 3, 5: 3, 6: 6, 7: 6, 8: 8, 9: 8, 10: 8}
+THREAD_BASE_POSTPATCH = {
+    # Patch notes: 2 / 3 / 4 additional red beasts. A Bestiary 7 map read 6: 3 plus one ExtraRedBeasts.
+    "bestiary": {n: {"map_additional_red_beasts": {3: 2, 6: 3, 8: 4}[t]} for n, t in _TIER.items()},
+    # Patch notes: 1 / 2 / 3 additional encounters. Not measured yet, and the pre-patch spawns
+    # already varied, so AdditionalLegion is skipped at every count until a Legion map is read.
+    "legion": {n: {"map_legion_league_extra_spawns": None} for n in range(1, 11)},
+}
+
 # Juice mods appear able to roll more than once on one map, and their stats then add up
 # (33 research chest clusters is two rolls of 14-18). Most rolls tried per mod.
 MAX_ROLLS = 5
 
 
-def base_for(mx):
+def base_for(mx, time):
     """Stat -> amount the map's Threads supply on their own, from THREAD_BASE (None: varies)."""
+    table = THREAD_BASE_POSTPATCH if time >= PATCH_TIME else THREAD_BASE
     base = Counter()
     for lg, n in mx.items():
-        for stat, value in THREAD_BASE.get(lg, {}).get(n, {}).items():
+        for stat, value in table.get(lg, {}).get(n, {}).items():
             if value is None or base[stat] is None:
                 base[stat] = None
             else:
@@ -305,7 +319,7 @@ def main():
     rows = []
     for m in maps:
         mx = mix(m["stats"])
-        full, partial = juice_hits(m["stats"], juice, base_for(mx))
+        full, partial = juice_hits(m["stats"], juice, base_for(mx, m["time"]))
         rows.append((m, mx, full, partial))
 
     print("== maps: %d" % len(rows))
@@ -335,7 +349,7 @@ def main():
     print("  so check the tree index on the maps listed above.")
     residual = []
     for m, mx, full, _ in rows:
-        base = base_for(mx)
+        base = base_for(mx, m["time"])
         claimed = {s["id"] for mod, _ in full for s in mod["stats"]} - set(base)
         residual.append({k: v for k, v in m["stats"].items() if k not in claimed})
     skip = {t.format(lg) for t in SET_STATS.values() for lg in LEAGUES} | {"map_%s_scarab_count" % lg for lg in LEAGUES}

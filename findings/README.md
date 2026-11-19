@@ -16,6 +16,7 @@ them from game memory while running maps with known Thread setups.
 | [results-888.md](results-888.md) | Fourteen 8/8/8 maps in three league combinations plus five two-league Breach / Ritual 8/8 maps. Juice keeps rising, eight juice mods first seen at 8, juice is per league, and Breach's hive-or-unstable-breaches branch |
 | [results-solo10.md](results-solo10.md) | Five solo 10-Thread Legion maps. About 2 juice per map, less than Legion gets at 8, for twice the tankiness |
 | [results-1116-mixed.md](results-1116-mixed.md) | The last 19 maps before the 2026-11-18 patch: uneven splits, a Bestiary atlas tree, Legion at 2, and maps without Threads. Several "first seen at 8" mods rolled at 2 or 6 |
+| [results-patch-1118.md](results-patch-1118.md) | The first five maps after the 2026-11-18 patch, covering Thread counts 1–10: the new stat set, each league's new stat, the guaranteed juice minimums and the six new juice mods |
 | [plan-666.md](plan-666.md) | The plan for the 6/6/6 run, as written before it |
 
 Short version:

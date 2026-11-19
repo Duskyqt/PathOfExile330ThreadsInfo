@@ -34,6 +34,10 @@ The full table is in [threads.md](threads.md#the-thread-stat-set).
 
 ## Choosing a level
 
+**These are pre-patch numbers.** The 2026-11-18 patch flattened the tankiness curve, so high
+Thread counts cost far less now. See
+[results-patch-1118.md](results-patch-1118.md#what-this-does-to-choosing-a-level).
+
 This compares only the league item rarity stat against monster tankiness. It leaves out juice
 mods and league content. The rarity stat affects only monsters from that league.
 

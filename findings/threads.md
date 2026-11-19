@@ -44,7 +44,11 @@ map_<league>_monster_from_league_item_rarity_+%_permyriad
 ```
 
 The values depend only on how many Threads that league has. They don't depend on which league
-it is, which other leagues share the map, or the atlas passives. Measured 2026-11-15:
+it is, which other leagues share the map, or the atlas passives.
+
+**The 2026-11-18 patch changed every value below.** The new table is in
+[results-patch-1118.md](results-patch-1118.md#the-new-stat-set). What follows is the pre-patch
+curve, measured 2026-11-15:
 
 | Threads of the league | Damage | Tankiness | Rarity (permyriad) | Source |
 |---|---|---|---|---|
